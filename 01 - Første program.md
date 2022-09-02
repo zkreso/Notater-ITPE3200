@@ -110,7 +110,7 @@ Ta utgangspunkt i et eksisterende prosjekt og opprett følgende mapper og filer:
 - ./wwwroot/index.html
 - ./wwwroot/js/index.js
 
-Hvis prosjektet er opprettet ut i fra mal og ikke tomt prosjekt så kan det være disse mappene allerede eksisterer og inneholder filer.
+Hvis prosjektet er opprettet ut i fra mal og ikke tomt prosjekt så kan det være at disse mappene allerede eksisterer og inneholder filer.
 
 **index.html**
 

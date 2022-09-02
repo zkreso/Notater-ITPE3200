@@ -3,14 +3,13 @@
 Utgangspunktet er appen fra uke 1 med server og klient. Repetisjon av hvilke steg vi har tatt for å opprette denne:
 
 1. Opprette nytt prosjekt ut i fra en tom mal: **ASP.NET Core Empty**
-2. Opprette modell (Kunde.cs) og kontroller (KundeController.cs) samt tilhørende mapper (Models og Controllers)
-3. Opprette index.html og index.js og tilhørende mapper (wwwroot og wwwroot/js)
+2. Opprette modell (Kunde.cs) og kontroller (KundeController.cs) i tilhørende mapper ( henholdsvis mappen Models og mappen Controllers )
+3. Opprette index.html og index.js og tilhørende mapper ( wwwroot og wwwroot/js )
 4. I Startup.cs:
-   - Legge til `services.AddControllers();` i ConfigureSerices metoden
-   - Erstatte koden i app.UseEndpoints kallet med `endpoints.MapControllers();`
-   - Legge til `app.UseStaticFiles();` i Configure metoden
+    - Legge til `services.AddControllers();` i ConfigureSerices metoden
+    - Legge til `app.UseStaticFiles();` i Configure metoden
+    - Erstatte koden i app.UseEndpoints kallet med `endpoints.MapControllers();`
 5. Sette launchUrl til index.html i Properties/launchSettings.json
-
 
 ## Installering av packages
 
@@ -20,7 +19,7 @@ Vi vil få bruk for to packages som vi må installere. Disse er:
 
 Vi kan installere disse ved å gå inn på Projects -> Manage NuGet Packages. Versjonsnummeret til packages som er brukt i videoen står i parantes ovenfor. Disse var de seneste versjonene når videoen ble laget og er kompatible med 3.1, som er brukt i videoen.
 
-*NB! Pass på å _ikke_ installere Microsoft.EntityFrameworkCore.Sqlite.Core. Altså package som slutter på Core. Dette er noe annet enn det vi skal ha*
+*NB! Pass på å _ikke_ installere Microsoft.EntityFrameworkCore.Sqlite.Core. Vi skal altså ha den som slutter med .Sqlite, ikke den som slutter på .Core.*
 
 ## Endringer i Kunde.cs
 
@@ -76,12 +75,12 @@ Da må også Sqlite package importeres (kan gjøres ved å trykke på lyspæren)
 
 ## Endringer i KundeController.cs
 
-I KundeController så må vi gjøre denne om til databaseversjonen. Da må følgende gjøres:
+Vi ønsker å endre KundeController til å ta i bruk database. Da må følgende endringer gjøres:
 
 1. Introdusere en ny private og readonly variabel av typen KundeDB som vi kaller _kundeDB.
-2. Opprette konstruktør for klassen som tar imot en slik variabel.
+2. Opprette konstruktør for klassen som setter verdien på denne.
 3. Endre HentAlle metoden til å hente data fra databasen.
-   - Her må vi importere package Linq som er spørrespråket vi bruker til å kommunisere med databasen. ToList() er en del av Linq biblioteket.
+   - Her må vi importere package System.Linq som er spørrespråket vi bruker til å kommunisere med databasen.
 
 **KundeController.cs**
 
@@ -112,4 +111,4 @@ namespace KundeApp1Empty.Controllers
 }
 ```
 
-For å teste om dette fungerer må vi bruke DBBrowser til å legge til data til databasen.
+For å legge til data må vi bruke DBbrowser. I neste steg lager vi metoder for å manipulere data direkte fra web appen vår, slik at vi ikke trenger å bruke DBbrowser.
