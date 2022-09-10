@@ -8,3 +8,4 @@
     - <a href="../master/03.1 - Hvordan endre navn på løsning.md">03.1 - Hvordan endre navn på løsning</a>
 - <a href="../master/04 - Kunde eksempel videre.md">04 - Kunde eksempel videre</a>
     - <a href="../master/04.1 - Asynkron kode.md">04.1 - Asynkron kode</a>
+- <a href="../master/05 - Kunde Ordre eksempel.md">05 - Kunde Ordre eksempel</a>    
