@@ -225,3 +225,25 @@ function slettKunde(id) {
     });
 };
 ```
+
+## Endringer i filer
+
+**ny knapp i index.html**
+
+```html
+<a href="lagre.html" class="btn btn-primary">Lagre ny kunde</a>
+```
+
+**lagt til knapper etter navn**
+
+```html
+for (let kunde of kunder) {
+        ut += "<tr>" +
+            "<td>" + kunde.navn + "</td>" +
+            "<td>" + kunde.adresse + "</td>" +
+            "<td> <a class='btn btn-primary' href='endre.html?id=" + kunde.id + "'>Endre</a></td>" +
+            "<td> <button class='btn btn-danger' onclick='slettKunde(" + kunde.id + ")'>Slett</button></td>" +
+            "</tr>";
+    }
+    ut += "</table>";
+```
