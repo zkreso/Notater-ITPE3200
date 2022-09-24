@@ -53,7 +53,7 @@ public class Poststeder
     }
 ```
 
-Til slutt så må vi legge til en override i KundeContext klassen for å introdusere bruk av lazy loadingen som vi har i Kunder klassen. Vi må også opprette tabellen for poststeder og kunder i denne klassen. (Vi fjerner opprettelse av Kunde som å der tidligere, da denne klassen ikke står for opprettelse av databasen lenger.)
+Til slutt så må vi legge til en override i KundeContext klassen for å introdusere bruk av lazy loadingen som vi har i Kunder klassen. Vi må også opprette tabellen for poststeder og kunder i denne klassen. (Vi fjerner opprettelse av Kunde som lå der tidligere, da denne klassen ikke står for opprettelse av databasen lenger.)
 
 ```cs
 public class KundeContext : DbContext
