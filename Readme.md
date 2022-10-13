@@ -8,6 +8,11 @@
     - <a href="../master/03.1 - Hvordan endre navn på løsning.md">03.1 - Hvordan endre navn på løsning</a>
 - <a href="../master/04 - Kunde eksempel videre.md">04 - Kunde eksempel videre</a>
     - <a href="../master/04.1 - Asynkron kode.md">04.1 - Asynkron kode</a>
-- <a href="../master/05 - Kunde Ordre eksempel.md">05 - Kunde Ordre eksempel</a>    
-- <a href="../master/06 - Data Access Layer.md">06 - Data Access Layer</a>    
+- <a href="../master/05 - Kunde Ordre eksempel.md">05 - Kunde Ordre eksempel</a>
+- <a href="../master/06 - Data Access Layer.md">06 - Data Access Layer</a>
     - <a href="../master/06.1 - Utgangspunkt for DAL.md">06.1 - Utgangspunkt for DAL</a>
+- <a href="../master/07 - Logging.md">07 - Logging av feil</a>
+- <a href="../master/08 - Feilhåndtering.md">08 - Feilhåndtering</a>
+- <a href="../master/09 - Inputvalidering.md">09 - Inputvalidering</a>
+- <a href="../master/10 - Login.md">10 - Login</a>
+- <a href="../master/11 - Sessions.md">11 - Sessions</a>
