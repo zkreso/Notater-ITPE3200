@@ -16,3 +16,5 @@
 - <a href="../master/09 - Inputvalidering.md">09 - Inputvalidering</a>
 - <a href="../master/10 - Login.md">10 - Login</a>
 - <a href="../master/11 - Sessions.md">11 - Sessions</a>
+- <a href="../master/12 - Enhetstesting (enkel).md">12 - Enhetstesting (enkel)</a>
+- <a href="../master/11 - Enhetstesting (avansert).md">13 - Enhetstesting (avansert)</a>
