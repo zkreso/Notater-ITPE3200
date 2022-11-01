@@ -1,6 +1,6 @@
 # Notater ITPE3200 Webapplikasjoner (H2022)
 
-### Innholdsfortegnelse
+### EF Core
 
 - <a href="../master/01 - Første program.md">01 - Første program</a>
 - <a href="../master/02 - Første program med database.md">02 - Første program med database</a>
@@ -23,3 +23,8 @@
 
 - <a href="../master/Javascript/01 - ES6 features.md">01 - Useful ES6 features</a>
 - <a href="../master/Javascript/02 - Typescript.md">02 - TypeScript basics</a>
+
+### Angular
+- <a href="../master/Angular/01 - Hallo verden.md">01 - Hallo verden</a>
+- <a href="../master/Angular/02 - Databinding.md">02 - Databinding</a>
+- <a href="../master/Angular/03 - Kontaktregister.md">03 - Kontaktregister (på klient)</a>
