@@ -18,3 +18,8 @@
 - <a href="../master/11 - Sessions.md">11 - Sessions</a>
 - <a href="../master/12 - Enhetstesting (enkel).md">12 - Enhetstesting (enkel)</a>
 - <a href="../master/13 - Enhetstesting (avansert).md">13 - Enhetstesting (avansert)</a>
+
+### Javascript
+
+- <a href="../master/Javascript/01 - ES6 features.md">01 - Useful ES6 features</a>
+- <a href="../master/Javascript/02 - Typescript.md">02 - TypeScript basics</a>
