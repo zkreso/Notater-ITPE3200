@@ -28,3 +28,9 @@
 - <a href="../master/Angular/01 - Hallo verden.md">01 - Hallo verden</a>
 - <a href="../master/Angular/02 - Databinding.md">02 - Databinding</a>
 - <a href="../master/Angular/03 - Kontaktregister.md">03 - Kontaktregister (på klient)</a>
+- <a href="../master/Angular/04 - Kall til server.md">04 - Kall til server</a>
+    - <a href="../master/Angular/04.1 - REST.md">04.1 - REST</a>
+- <a href="../master/Angular/05 - Skjemaer (forms).md">05 - Skjemaer (forms)</a>
+- <a href="../master/Angular/06 - Routing.md">06 - Routing</a>
+- <a href="../master/Angular/07 - Modal.md">07 - Modal</a>
+- <a href="../master/Angular/08 - Debugging.md">08 - Debugging</a>

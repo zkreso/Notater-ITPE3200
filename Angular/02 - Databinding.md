@@ -2,7 +2,7 @@
 
 Ta utgangspunkt i et "tomt hallo verden" prosjekt. Vi skal ha en inputboks og utskriften. Da må vi endre app.component.html til følgende:
 
-```ts
+```html
 <div>
     Navnet er {{navn}}<br />
     Skriv inn navnet her: <input type="text" [(ngModel)]="navn" />

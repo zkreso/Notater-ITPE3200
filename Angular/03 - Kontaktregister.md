@@ -18,7 +18,7 @@ export class kontakt {
 
 app.component.html blir slik:
 
-```ts
+```html
 <div>
     <h1>Kontaktliste</h1>
     <table class="table">
