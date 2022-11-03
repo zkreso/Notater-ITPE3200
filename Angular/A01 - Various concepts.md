@@ -70,6 +70,8 @@ ng g c component-name
 
 This will create the .ts, .html and .css files for a component, with all the boilerplate, as well as register it (declare it) in the parent module. There will be a constructor and onInit method in the component by default. This can be removed if it's not used.
 
+If there are multiple modules that can become parents, you might get an error saying it doesn't know which one it should belong to. You can use `--module=module-name` to specify which one.
+
 **Creating a new service**
 
 ```sh
@@ -78,3 +80,15 @@ ng generate service service-name
 # alternatively, shorthand:
 ng g s service-name
 ```
+
+**Creating a new app**
+
+This isn't that relevant since we are creating the app through Visual Studio. But this is what you would type if you just wanted to create an angular app outside of any IDE.
+
+```sh
+ng new app-name
+```
+
+### To add: Events
+
+### To add: Subscriptions

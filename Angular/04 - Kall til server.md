@@ -2,6 +2,8 @@
 
 For å gjøre kall til server trenger i en kontroller. Vi bruker dekoratøren `"api/[controller]"`. Dette gir oss et REST api. Vi trenger selvfølgelig ikke bruke et REST api, da kan vi f.eks. bruke den type dekoratør som vi hadde i del 1 i kurset `"[controller]/[action]"`
 
+NB: `[ApiController]` dekoratøren må også være med. Han nevner ikke det i videoen.
+
 I et REST api har http metoden betydning. Det er ikke likegyldig om man bruker GET eller POST osv. Vi må bestemme hvilken http metode funksjonene i controlleren skal kunne nås med. For en metode som f.eks. returnerer en liste med kunder vil det være naturlig at denne kan nås ved å bruke GET. Det gjøres ved å bruke dekoratøren `[HttpGet]` foran metoden **og/eller** så må metoden hete noe med "Get". Bortsett fra det kan kontrolleren utformes hvordan man ønsker. Limer ikke inn noe eksempel på det her.
 
 **app.component.html** kan f.eks. se slik ut:
