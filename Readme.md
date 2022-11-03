@@ -34,3 +34,6 @@
 - <a href="../master/Angular/06 - Routing.md">06 - Routing</a>
 - <a href="../master/Angular/07 - Modal.md">07 - Modal</a>
 - <a href="../master/Angular/08 - Debugging.md">08 - Debugging</a>
+
+### Other
+- <a href="../master/Angular/A01 - Various concepts.md">A01 - Various concepts in Angular</a>
