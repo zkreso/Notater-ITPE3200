@@ -89,6 +89,22 @@ This isn't that relevant since we are creating the app through Visual Studio. Bu
 ng new app-name
 ```
 
+### Forms in Angular
+
+Angular has two different modules to use forms: Reactive forms and Template-driven forms.
+
+### Error handling
+
+https://www.youtube.com/watch?v=kb9CBd2c4uA
+
+https://angular.io/tutorial/toh-pt6#error-handling
+
+https://iamturns.com/continue-rxjs-streams-when-errors-occur/
+
+https://stackoverflow.com/a/58661330
+
+https://www.tektutorialshub.com/angular/angular-http-error-handling/
+
 ### To add: Events
 
 ### To add: Subscriptions
