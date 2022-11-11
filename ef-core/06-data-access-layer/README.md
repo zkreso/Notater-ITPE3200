@@ -2,7 +2,7 @@
 
 Vi ønsker å flytte implementeringen av kommunikasjonen mellom tjener og database vekk fra Controller klassen. Vi abstraherer denne vekk ved å legge til et nytt lag - et data access layer. Vi flytter implementasjonen inn i en ny klasse som vi kaller KundeRepository. Vi oppretter et interface for metodene vi ønsker å ha og ender Controlleren fra å ta imot et KundeContext objekt til å ta imot interfacet vi laget.
 
-Se utgangspunkt for dette eksempelet i eget dokument: <a href="../master/06.1 - Utgangspunkt for DAL.md">Link</a>
+Se utgangspunkt for dette eksempelet i eget dokument: [Link](../../master/06.1%20-%20Utgangspunkt%20for%20DAL.md)
 
 ## Endringer i filstruktur og nye filer
 
@@ -10,26 +10,27 @@ Lager ny mappe som vi kaller **DAL**. Dit flyttes det som har med databasen å g
 
 Filstrukturen ser slik ut etter endringer:
 
-- 📁 Controllers
-    - KundeController.cs
-- 📁 DAL
-    - DBInit.cs
-    - KundeRepository.cs
-    - KundeContext.cs
-    - IKundeRepository.cs
-- 📁 Models
-    - Kunde.cs
-    - Poststed.cs
+* 📁 Controllers
+  * KundeController.cs
+* 📁 DAL
+  * DBInit.cs
+  * KundeRepository.cs
+  * KundeContext.cs
+  * IKundeRepository.cs
+* 📁 Models
+  * Kunde.cs
+  * Poststed.cs
 
 (I tillegg til filer for frontend; wwwroot osv.)
 
-- **IKundeRepository.cs** skal være grensesnitt og inneholde alle de vanlige ønskede metodene (CRUD)
-- **KundeRepository.cs** skal være en klasse som implementerer grensesnittet (implementasjonen lå tidligere i KundeController)
-- **KundeController.cs** skal nå ta imot klasser som implementerer grensesnittet. Implementasjonen av metodene blir delegert til den klassen det gjelder. 
+* **IKundeRepository.cs** skal være grensesnitt og inneholde alle de vanlige ønskede metodene (CRUD)
+* **KundeRepository.cs** skal være en klasse som implementerer grensesnittet (implementasjonen lå tidligere i KundeController)
+* **KundeController.cs** skal nå ta imot klasser som implementerer grensesnittet. Implementasjonen av metodene blir delegert til den klassen det gjelder.
 
 **IKundeRepository.cs**
 
 Grensesnittet skal inneholde alle de vanlige metodene (CRUD).
+
 ```cs
 using KundeAppDAL.Models;
 using System.Collections.Generic;
@@ -48,9 +49,10 @@ namespace KundeAppDAL.DAL
 }
 ```
 
-**KundeRepository.cs** 
+**KundeRepository.cs**
 
 KundeRepository skal være en klasse som implementerer grensesnittet vi laget.
+
 ```cs
 using KundeAppDAL.Models;
 using Microsoft.EntityFrameworkCore;
@@ -200,6 +202,7 @@ namespace KundeAppDAL.DAL
 **KundeController.cs**
 
 KundeController skal ta imot klasser som implementerer grensesnittet vi laget
+
 ```cs
 using KundeAppDAL.DAL;
 using KundeAppDAL.Models;
@@ -249,6 +252,7 @@ namespace KundeApp3.Controller
 **Startup.cs**
 
 Til slutt må det legges til enda en service i Startup, unded ConfigureServices:
+
 ```cs
 services.AddScoped<IKundeRepository, KundeRepository>();
 ```
