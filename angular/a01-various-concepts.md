@@ -93,7 +93,119 @@ ng new app-name
 
 Angular has two different modules to use forms: Reactive forms and Template-driven forms.
 
-### Error handling
+# Error handling
+
+## Application errors
+
+Whenever the app throws an **unhandled** exception, Angular intercepts that exception and invokes the `handleError(error)` method of the `ErrorHandler` class (which is part of the `@angular/core` module). The default behavior of the `handleError` method is to write the error to the browser console.
+
+If we want to change the default behavior, we must create a service that implements the `ErrorHandler` class and overwrite the `handleError(error)` method. For example:
+
+```ts
+@Injectable()
+export class GlobalErrorHandlerService implements ErrorHandler {
+ 
+  constructor() { 
+  }
+ 
+  handleError(error) {
+     console.error('An error occurred:', error.message);
+     console.error(error);
+     alert(error);
+  }
+  
+}
+```
+
+The class must be provided with a special token, `ErrorHandler`:
+
+```ts
+  providers: [
+    { provide: ErrorHandler, useClass: GlobalErrorHandlerService },
+  ]
+```
+
+### Using other services in custom error handler class
+
+Providers won't be available to `ErrorHandler` as it is created before them. To be able to use other services in our class, we need to use the `Injector` instance directly. A common use for this is if we want to redirect the user to the login page if there is an unauthorized error. Example:
+
+```ts
+import { ErrorHandler, Injectable, Injector} from '@angular/core';
+import { Router } from '@angular/router';
+ 
+@Injectable()
+export class GlobalErrorHandlerService implements ErrorHandler {
+ 
+    constructor(private injector: Injector) {
+    }
+ 
+    handleError(error) {
+ 
+        let router = this.injector.get(Router);
+        console.log('URL: ' + router.url);
+        console.error('An error occurred:', error.message);
+       
+       alert(error);
+   }
+}
+```
+Here we had to:
+- Import Injector from `@angular/core`
+- Import the service we wanted to inject.
+- In the constructor, inject the injector (not the service)
+- To access the service, we can use `this.injector.get(_service_)`
+
+## Http errors
+
+The subscribe method has three callback arguments: `success`, error and `completed`.
+
+### Handling http error in component:
+
+```ts
+public getRepos() {
+    this.loading = true;
+    this.errorMessage = "";
+    this.githubService.getReposCatchError(this.userName)
+      .subscribe(
+        (response) => {                           //Next callback
+          console.log('response received')
+          this.repos = response;
+        },
+        (error) => {                              //Error callback
+          console.error('error caught in component')
+          this.errorMessage = error;
+          this.loading = false;
+    
+          //throw error;   //You can also throw the error to a global error handler
+        }
+      )
+}
+```
+
+### Handling http error in service:
+
+```ts
+getRepos(userName: string): Observable<repos[]> {
+return this.http.get<repos[]>(this.baseURL + 'usersY/' + userName + '/repos')
+    .pipe(
+    catchError((err) => {
+        console.log('error caught in service')
+        console.error(err);
+
+        //Handle the error here
+
+        return throwError(err);    //Rethrow it back to component
+    })
+    )
+}
+```
+
+Note the difference between `throw new Error(error)` and `return throwError(error)` !
+
+You can retry with retry. If you want to skip the error, you can output an empty observable instead of an error.
+
+
+#### Resources
 
 https://www.youtube.com/watch?v=kb9CBd2c4uA
 
@@ -104,7 +216,3 @@ https://iamturns.com/continue-rxjs-streams-when-errors-occur/
 https://stackoverflow.com/a/58661330
 
 https://www.tektutorialshub.com/angular/angular-http-error-handling/
-
-### To add: Events
-
-### To add: Subscriptions
