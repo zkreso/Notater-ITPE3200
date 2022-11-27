@@ -57,8 +57,7 @@ const b = alphabet[1];
 const [a, b] = alphabet;
 ```
 
-The position of the elements in the array will determine which variable gets what value.
-If you want to skip an element, you can leave out the name, like this:
+The position of the elements in the array will determine which variable gets what value. If you want to skip an element, you can leave out the name, like this:
 
 ```js
 const[a,, c] = alphabet;
@@ -113,3 +112,48 @@ function printUser({name, age}) {
 ```
 
 As long as we pass an object with name and age properties, this will work. It's also possible to use default values in line like shown before.
+
+### Short circuiting
+
+This isn't really a ES6 feature, but it's possible to use logical operators to write shorter if statements.
+
+```javascript
+true && function() // Function will run
+false && function() // Function will not run
+
+false || function() // Function will run
+true || function() // Function will not run
+
+// Compare to null coalescing operator
+
+const foo =false ?? "default" // foo: false
+const foo = null ?? "default" // foo: "default"
+
+const foo = false || "default" // foo: "default"
+const foo = null || "default" // foo: "default"
+```
+
+#### Optional chaining
+
+```javascript
+const a = foo?.bar?.baz 
+// Will assign baz to a only if foo and bar are defined
+// Otherwise will assign undefined
+
+// Also works with arrays
+const a = foo.?[0] // Only assigns to a if the array exists
+```
+
+#### Console stuff
+
+```javascript
+// Print a table
+console.table([foo, bar, baz]) // Where foo, bar and baz are objects of the same type
+
+// Measure how long something took
+console.time('looper')
+
+// some function
+
+console.timeEnd('looper')
+```
